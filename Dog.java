@@ -49,7 +49,7 @@ public class Dog extends Mammal
 	 * 
 	 * @return isStray
 	 */
-	public boolean isStray() {
+	public boolean getIsStray() {
 		return isStray;
 	}
 	
