@@ -2,7 +2,7 @@
 Project displaying OOP concepts
 ```mermaid
 classDiagram
-    note "Class Structure"
+    note "UML Diagram"
   
     Attributes <|.. Arthropod
     Attributes <|.. Animal
@@ -12,26 +12,66 @@ classDiagram
     Reptile <|-- Snake
     Mammal <|-- Dog
     Insect <|-- Ant
-    Attributes : +int age
-    Attributes : +String gender
-    Attributes: +isMammal()
-    Attributes: +mate()
+
     class Dog{
-        +String beakColor
-        +swim()
-        +quack()
+      -bool isStray
+      +Dog()
+      +Dog(int legs, String color, String species)
+      +Dog(int legs, String color, String species, boolean isStray)
+      +getIsStray()
+      +setIsStray(isStray)
+      +speak()
     }
     class Ant{
-        -int sizeInFeet
-        -canEat()
+      +Ant()
+      +Ant(String exoskeleton)
+      +speak()
     }
 
     class Snake{
-        -int sizeInFeet
-        -canEat()
+      -bool isVenomous
+      +Snake()
+      +Snake(String color, String species)
+      +Snake(String color, String species, boolean isVenomous)
+      +getIsVenomous()
+      +setIsVenomous(isVenomous)
+      +speak()
     }
     class Attributes{
-        +getLegs()
-        +run()
+      <<interface>>
+      +speak()*
     }
+    class Animal{
+      <<abstract>>
+      +getLegs()*
+      +setLegs(int legs)*
+      +getColor()*
+      +setColor(String color)*
+      +getSpecies()*
+      +setSpecies(String secies)*
+    }
+    class Arthropod{
+      <<abstract>>
+      setExoskeleton()*
+      getExoskeleton()*
+    }
+  class Insect{
+      setExoskeleton()
+      getExoskeleton()
+  }
+  class Mammal{
+    -int legs
+    -String color
+    -String species
+    Mammal()
+    Mammal(int legs, String color, String species)
+    +getLegs()
+    +setLegs(int legs)
+    +getColor()
+    +setColor(String color)
+    +getSpecies()
+    +setSpecies(String secies)
+    
+  }
+
 ```
